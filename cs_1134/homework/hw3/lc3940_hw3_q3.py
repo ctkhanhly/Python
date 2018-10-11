@@ -7,7 +7,6 @@ def find_duplicates(lst):
     for i in range(len(count)):
         if(count[i] > 1):
             num_of_duplicates += 1
-    #should i use append instead?
     new_list = [0] * num_of_duplicates
     index = 0
     for i in range(len(count)):
@@ -17,5 +16,7 @@ def find_duplicates(lst):
     return new_list
 
 
-list1 = [3, 4, 1, 2, 2, 3]
+'''
+list1 = [3, 4, 1, 2, 2, 3, 5, 1, 7, 9]
 print(find_duplicates(list1))
+'''

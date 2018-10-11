@@ -3,6 +3,7 @@ import ctypes  # provides low-level arrays
 
 def make_array(n):
     return (n * ctypes.py_object)()
+    #create a simple array of references?
 
 
 class MyList:
@@ -93,9 +94,9 @@ class MyList:
 
     def insert(self, index, val):
         if not(-self.n <= index < self.n - 1):
-            raise IndexError(str(ind) + " is out of range")
+            raise IndexError(str(index) + " is out of range")
         if(self.n == self.capacity):
-            self.resize(self, 2 * self.capacity)
+            self.resize(2 * self.capacity)
         else:
             self.n += 1
             for i in range(self.n - 1, index - 1, -1):
@@ -109,7 +110,7 @@ class MyList:
 
         if not(index == None):
             if not(-self.n <= index < self.n - 1):
-                raise IndexError(str(ind) + " is out of range")
+                raise IndexError(str(index) + " is out of range")
 
             for i in range(index, self.n - 1):
                 self.data[i] = self.data[i + 1]
@@ -123,11 +124,10 @@ class MyList:
 
         if(self.n < self.capacity // 4):
             self.resize(self.capacity // 2)
-            print("new capacity", self.capacity)
-
         return val
 
 
+'''
 if __name__ == '__main__':
     list1 = MyList()
     for i in range(4):
@@ -144,14 +144,13 @@ if __name__ == '__main__':
     print(2 * list1)
     print(list1 * 2)
     print(list1)
-    list1.insert(2, 10)
+    list1.insert(1, 30)
     print(list1)
     print(list1.pop())
     list1.pop(2)
     print(list1)
-    list1.pop()
-    list1.pop()
-    list1.pop()
-    list1.pop()
-    list1.pop()
+    list1.pop(3)
     print(list1, "capacity", list1.capacity)
+    list1.pop()
+    print(list1)
+'''

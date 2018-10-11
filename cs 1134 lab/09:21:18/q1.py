@@ -1,4 +1,11 @@
 '''
+Given a sorted list of positive integers with zeros placed in between some of them, write
+a function to move all zeros to the end of the list while maintaining the order of the
+non-zero numbers. For example, given the list [0, 1, 0, 3, 13], the function will modify the
+list to become [1, 3, 13, 0, 0]. Note that this must be done in-place and you are only
+allowed Θ (1) additional space. In other words, you cannot use any collection of
+elements of non-constant size. Your solution must run in Θ (n).
+
 Note that this must be done in-place and you are only
 allowed Θ (1) additional space. In other words, you cannot use any collection of
 elements of non-constant size.
@@ -14,6 +21,7 @@ remove the first one => every other elements have to shift to the left
 
 
 def move_zeroes(nums):
+    left = 0
     for i in range(len(nums)):
         if(nums[i] != 0):
             nums[i], nums[left] = nums[left], nums[i]
@@ -37,6 +45,9 @@ def move_zeroes(nums):
 
 '''
 2.
+Write a python function that takes in 2 sorted​ lists of numbers and returns the
+intersection list, that is a list that contains the elements that show in both input lists. Aim
+for linear time complexity. That is if the first input list has n elements, and the second has m elements, the runtime should be θ(n + m)
 . Aim
 for linear time complexity. That is if the first input list has n elements, and the second has m elements, the runtime should be θ(n + m)
 '''

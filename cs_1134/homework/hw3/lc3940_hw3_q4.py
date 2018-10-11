@@ -5,10 +5,10 @@ def remove_all(lst, val):
         if(lst[i] == val):
             i = i + 1
             count += 1
-            # i< len has to be 1st argument, b/c list[len]  = index error
-            while ((i < len(lst) and not(lst[i] == val))):
+            # shift every element to the left and shift them on top of the duplicates
+            while (i < len(lst) and not(lst[i] == val)):
                 lst[i - count] = lst[i]
-                i += 1
+                i += 1  # this increase makes the outer loop only runs n times
         else:
             i += 1
     while(count > 0):
@@ -17,5 +17,7 @@ def remove_all(lst, val):
     return lst
 
 
+'''
 list1 = [2, 1, 3, 8, 1, 0, 2, 33, 11, 2, 4, 2]
 print(remove_all(list1, 2))
+'''
